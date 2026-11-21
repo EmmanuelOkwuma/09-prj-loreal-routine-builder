@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>L’Oréal | Your Routine, Refined</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <header class="site-header">
+      <img src="img/loreal-logo.png" alt="L’Oréal" class="logo" width="220">
+      <p class="eyebrow">YOUR BEAUTY, YOUR WAY</p>
+      <h1>Your routine,<br><em>refined.</em></h1>
+      <p>Explore your favorites. Build something personal.</p>
+    </header>
+    <main>
+      <section aria-labelledby="browseTitle">
+        <div class="section-heading"><div><p class="eyebrow">01 / DISCOVER</p><h2 id="browseTitle">Find your beauty essentials</h2></div></div>
+        <div class="search-section">
+          <div><label for="productSearch">Search products</label><input id="productSearch" type="search" placeholder="Try CeraVe, serum, or dry skin…"></div>
+          <div><label for="categoryFilter">Category</label><select id="categoryFilter"><option value="">All categories</option></select></div>
+        </div>
+        <p id="catalogStatus" class="status" role="status">Loading products…</p>
+        <div id="productsContainer" class="products-grid" aria-label="Products"></div>
+      </section>
+      <section class="selected-products panel" aria-labelledby="selectedTitle">
+        <div class="section-heading"><div><p class="eyebrow">02 / CURATE</p><h2 id="selectedTitle">Your selected products <span id="selectionCount">0</span></h2></div><button id="clearSelection" class="quiet-btn" type="button">Clear all</button></div>
+        <div id="selectedProductsList" aria-live="polite"></div>
+        <label for="routinePreferences">Make it yours <span class="optional">(optional)</span></label>
+        <textarea id="routinePreferences" rows="2" maxlength="1000" placeholder="Tell us your skin or hair type, goals, and preferences…"></textarea>
+        <button id="generateRoutine" class="generate-btn" type="button" disabled>Generate my routine ↗</button>
+        <p id="selectionStatus" class="status" role="status"></p>
+      </section>
+      <section class="chatbox panel" aria-labelledby="chatTitle">
+        <div class="section-heading"><div><p class="eyebrow">03 / REFINE</p><h2 id="chatTitle">Your beauty conversation</h2></div><button id="resetBtn" class="quiet-btn" type="button">New chat</button></div>
+        <div id="chatWindow" class="chat-window" role="log" aria-label="Routine and conversation" aria-live="polite" aria-relevant="additions"></div>
+        <form id="chatForm" class="chat-form">
+          <label for="userInput" class="visually-hidden">Ask about your routine</label>
+          <input id="userInput" name="userInput" placeholder="Ask a follow-up about your routine…" maxlength="2000" autocomplete="off" required>
+          <button type="submit" id="sendBtn">Send ↗</button>
+        </form>
+        <p id="chatStatus" class="status" role="status"></p>
+      </section>
+    </main>
+    <footer>Student project • Not an official L’Oréal service.<br>AI suggestions may be inaccurate. Check product labels.</footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
