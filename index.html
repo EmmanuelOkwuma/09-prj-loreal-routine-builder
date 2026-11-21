@@ -8,42 +8,45 @@
 </head>
 <body>
   <div class="page-wrapper">
+    <div class="language-control"><label for="languageSelect">Language / اللغة</label><select id="languageSelect"><option value="en">English · LTR</option><option value="ar">العربية · RTL</option></select></div>
     <header class="site-header">
       <img src="img/loreal-logo.png" alt="L’Oréal" class="logo" width="220">
-      <p class="eyebrow">YOUR BEAUTY, YOUR WAY</p>
-      <h1>Your routine,<br><em>refined.</em></h1>
-      <p>Explore your favorites. Build something personal.</p>
+      <p class="eyebrow" data-i18n="tagline">YOUR BEAUTY, YOUR WAY</p>
+      <h1><span data-i18n="hero">Your routine,</span><br><em data-i18n="heroAccent">refined.</em></h1>
+      <p data-i18n="intro">Explore your favorites. Build something personal.</p>
     </header>
     <main>
       <section aria-labelledby="browseTitle">
-        <div class="section-heading"><div><p class="eyebrow">01 / DISCOVER</p><h2 id="browseTitle">Find your beauty essentials</h2></div></div>
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="discover">01 / DISCOVER</p><h2 id="browseTitle" data-i18n="browseTitle">Find your beauty essentials</h2></div></div>
         <div class="search-section">
-          <div><label for="productSearch">Search products</label><input id="productSearch" type="search" placeholder="Try CeraVe, serum, or dry skin…"></div>
-          <div><label for="categoryFilter">Category</label><select id="categoryFilter"><option value="">All categories</option></select></div>
+          <div><label for="productSearch" data-i18n="searchLabel">Search products</label><input id="productSearch" type="search" dir="auto" placeholder="Try CeraVe, serum, or dry skin…"></div>
+          <div><label for="categoryFilter" data-i18n="categoryLabel">Category</label><select id="categoryFilter"><option value="" data-i18n="allCategories">All categories</option></select></div>
         </div>
         <p id="catalogStatus" class="status" role="status">Loading products…</p>
         <div id="productsContainer" class="products-grid" aria-label="Products"></div>
       </section>
       <section class="selected-products panel" aria-labelledby="selectedTitle">
-        <div class="section-heading"><div><p class="eyebrow">02 / CURATE</p><h2 id="selectedTitle">Your selected products <span id="selectionCount">0</span></h2></div><button id="clearSelection" class="quiet-btn" type="button">Clear all</button></div>
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="curate">02 / CURATE</p><h2 id="selectedTitle"><span data-i18n="selectedTitle">Your selected products</span> <span id="selectionCount">0</span></h2></div><button id="clearSelection" class="quiet-btn" type="button" data-i18n="clearAll">Clear all</button></div>
         <div id="selectedProductsList" aria-live="polite"></div>
-        <label for="routinePreferences">Make it yours <span class="optional">(optional)</span></label>
-        <textarea id="routinePreferences" rows="2" maxlength="1000" placeholder="Tell us your skin or hair type, goals, and preferences…"></textarea>
-        <button id="generateRoutine" class="generate-btn" type="button" disabled>Generate my routine ↗</button>
+        <label for="routinePreferences" data-i18n="preferencesLabel">Make it yours (optional)</label>
+        <textarea id="routinePreferences" dir="auto" rows="2" maxlength="1000" placeholder="Tell us your skin or hair type, goals, and preferences…"></textarea>
+        <button id="generateRoutine" class="generate-btn" type="button" disabled data-i18n="generate">Generate my routine ↗</button>
         <p id="selectionStatus" class="status" role="status"></p>
       </section>
       <section class="chatbox panel" aria-labelledby="chatTitle">
-        <div class="section-heading"><div><p class="eyebrow">03 / REFINE</p><h2 id="chatTitle">Your beauty conversation</h2></div><button id="resetBtn" class="quiet-btn" type="button">New chat</button></div>
+        <div class="section-heading"><div><p class="eyebrow" data-i18n="refine">03 / REFINE</p><h2 id="chatTitle" data-i18n="chatTitle">Your beauty conversation</h2></div><button id="resetBtn" class="quiet-btn" type="button" data-i18n="newChat">New chat</button></div>
         <div id="chatWindow" class="chat-window" role="log" aria-label="Routine and conversation" aria-live="polite" aria-relevant="additions"></div>
         <form id="chatForm" class="chat-form">
           <label for="userInput" class="visually-hidden">Ask about your routine</label>
-          <input id="userInput" name="userInput" placeholder="Ask a follow-up about your routine…" maxlength="2000" autocomplete="off" required>
-          <button type="submit" id="sendBtn">Send ↗</button>
+          <input id="userInput" name="userInput" dir="auto" placeholder="Ask a follow-up about your routine…" maxlength="2000" autocomplete="off" required>
+          <button type="submit" id="sendBtn" data-i18n="send">Send ↗</button>
         </form>
+        <label class="search-toggle" for="webSearch"><input type="checkbox" id="webSearch"><span data-i18n="webSearchLabel">Search the web for this follow-up</span></label>
+        <p class="search-help" data-i18n="webSearchHelp">Use current sources for product questions. Source links appear with the answer.</p>
         <p id="chatStatus" class="status" role="status"></p>
       </section>
     </main>
-    <footer>Student project • Not an official L’Oréal service.<br>AI suggestions may be inaccurate. Check product labels.</footer>
+    <footer><span data-i18n="studentFooter">Student project • Not an official L’Oréal service.</span><br><span data-i18n="accuracyFooter">AI suggestions may be inaccurate. Check product labels.</span></footer>
   </div>
   <script src="script.js"></script>
 </body>

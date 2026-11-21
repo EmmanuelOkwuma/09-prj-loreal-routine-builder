@@ -55,3 +55,25 @@ footer { margin-top: 30px; font-size: 11px; text-align: center; line-height: 1.8
 .visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0,0,0,0); }
 @media (max-width: 760px) { .products-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
 @media (max-width: 480px) { .page-wrapper { padding: 26px 14px; } .site-header { margin-bottom: 36px; } .search-section { grid-template-columns: 1fr; } .products-grid { gap: 12px; } .product-select { padding: 14px; } .product-select img { height: 120px; } .product-name { font-size: 14px; } details { padding: 12px 14px; } .panel { padding: 20px 16px; } h2 { font-size: 22px; } input, select, textarea { font-size: 16px; } .msg { max-width: 96%; padding: 12px 14px; } }
+
+/* Logical alignment follows the selected language across grid, chips, and chat. */
+.language-control { display: flex; align-items: center; justify-content: flex-end; gap: 10px; margin-bottom: 26px; }
+.language-control label { margin: 0; font-weight: 400; }
+.language-control select { width: auto; padding: 9px 12px; font-size: 12px; }
+.search-toggle { display: flex; gap: 9px; align-items: center; margin-top: 18px; font-weight: 400; cursor: pointer; }
+.search-toggle input { width: 17px; height: 17px; margin: 0; accent-color: var(--pink); flex-shrink: 0; }
+.search-help { font-size: 11px; color: #766b5a; line-height: 1.5; margin: 6px 0; }
+.source-link { color: #8c0030; text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.message-body > .source-link { display: inline-block; margin-inline: 3px; }
+.source-list { border-top: 1px solid #d8cfc2; margin-top: 14px; padding-top: 10px; font-size: 12px; white-space: normal; }
+.source-list p { margin: 0 0 6px; font-weight: 600; }
+.source-list a { display: block; margin-top: 7px; }
+.search-badge { display: inline-block; border: 1px solid #d6c19d; border-radius: 15px; padding: 3px 9px; margin: 12px 0 0; font-size: 10px; white-space: normal; }
+.product-description { unicode-bidi: plaintext; }
+.msg { text-align: start; }
+[dir="rtl"] h1, [dir="rtl"] h2 { font-family: Tahoma, Arial, sans-serif; line-height: 1.5; }
+[dir="rtl"] .eyebrow { letter-spacing: 0; }
+[dir="rtl"] .msg.ai { border-radius: 20px 6px 20px 20px; }
+[dir="rtl"] .msg.user { border-radius: 6px 20px 20px 20px; }
+.selection-chip bdi { overflow-wrap: anywhere; min-width: 0; }
+@media (max-width: 480px) { .language-control { justify-content: center; } .section-heading { align-items: flex-start; } .quiet-btn { max-width: 44%; } }
